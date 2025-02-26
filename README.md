@@ -1,124 +1,138 @@
-Azure Chat API with Flask
+# Azure Chat API with Flask
 
-This project provides a REST API built with Flask that integrates with Azure Communication Services to facilitate real-time chat functionalities. It includes user management, chat thread creation, message exchange, and retrieval.
+This project provides a **REST API** built with **Flask** that integrates with **Azure Communication Services** to facilitate real-time chat functionalities. It includes user management, chat thread creation, message exchange, and retrieval.
 
-Features
+## Features ✅
 
-✅ Create users and generate authentication tokens
+- **Create users** and generate authentication tokens  
+- **Create chat threads**  
+- **Add participants** to a chat thread  
+- **Send and receive messages**  
+- **Fetch chat history**  
 
-✅ Create chat threads
+## Tech Stack 🛠️
 
-✅ Add participants to a chat thread
+- **Backend:** Flask (Python)  
+- **Cloud Services:** Azure Communication Services (Chat & Identity APIs)  
 
-✅ Send and receive messages
+---
 
-✅ Fetch chat history
+## Prerequisites ⚙️
 
-Tech Stack
+Ensure you have the following:
 
-Backend: Flask (Python)
+- Python **3.7+** installed on your machine  
+- **Azure Communication Services** set up with an active **connection string**  
 
-Cloud Services: Azure Communication Services (Chat & Identity APIs)
+---
 
-Prerequisites
+## Installation 🏗️
 
-Python 3.7+ installed on your machine.
-
-Azure Communication Services set up with an active connection string.
-
-Installation
-
-Clone the repository:
-
-git clone https://github.com/your-username/azure-chat-api-flask.git
+### 1️⃣ Clone the repository  
+```bash
+git clone https://github.com/HimanshuChelani27/azure-chat-api-flask.git
 cd azure-chat-api-flask
-
-Install dependencies:
-
+2️⃣ Install dependencies
+bash
+Copy
+Edit
 pip install -r requirements.txt
-
+3️⃣ Configure Azure Communication Services
 Replace the placeholder connection string in the script with your Azure Communication Services connection string.
 
-Running the Application
-
+Running the Application ▶️
 Start the Flask server by running:
 
+bash
+Copy
+Edit
 python app.py
+The API will be available at:
+➡️ http://localhost:5000
 
-The API will be available at http://localhost:5000.
-
-API Endpoints
-
-1. Create Users
-
+API Endpoints 🚀
+1️⃣ Create Users
 POST /create_users
 
 Response:
 
+json
+Copy
+Edit
 {
   "user1_id": "user_id_1",
   "user2_id": "user_id_2",
   "user1_token": "token_1",
   "user2_token": "token_2"
 }
-
-2. Create Chat Thread
-
+2️⃣ Create Chat Thread
 POST /create_thread
 
 Request:
 
+json
+Copy
+Edit
 {
   "user1_id": "user_id_1"
 }
-
 Response:
 
+json
+Copy
+Edit
 {
   "thread_id": "thread_id_123"
 }
-
-3. Add User to Thread
-
+3️⃣ Add User to Thread
 POST /add_user
 
 Request:
 
+json
+Copy
+Edit
 {
   "thread_id": "thread_id_123",
   "user2_id": "user_id_2"
 }
-
 Response:
 
+json
+Copy
+Edit
 {
   "message": "User added successfully"
 }
-
-4. Send Message
-
+4️⃣ Send Message
 POST /send_message
 
 Request:
 
+json
+Copy
+Edit
 {
   "thread_id": "thread_id_123",
   "user_id": "user_id_1",
   "message": "Hello, World!"
 }
-
 Response:
 
+json
+Copy
+Edit
 {
   "message": "Message sent successfully"
 }
-
-5. Fetch Messages
-
+5️⃣ Fetch Messages
 GET /get_messages?thread_id=thread_id_123&user_id=user_id_1
 
 Response:
 
+json
+Copy
+Edit
 {
   "messages": [
     {
@@ -128,13 +142,14 @@ Response:
     }
   ]
 }
-
-6. Fetch Full Chat History
-
+6️⃣ Fetch Full Chat History
 GET /get_all_messages?thread_id=thread_id_123&user_id=user_id_1
 
 Response:
 
+json
+Copy
+Edit
 {
   "messages": [
     {
@@ -150,20 +165,8 @@ Response:
   ]
 }
 
-Deployment
-
-To deploy the app using Docker:
-
-Build the Docker image:
-
-docker build -t azure-chat-api .
-
-Run the container:
-
-docker run -p 5000:5000 azure-chat-api
-
-License
-
+License 📜
 This project is licensed under the MIT License.
 
-🔗 Author: Himanshu Chelani
+🔗 Author
+Himanshu Chelani
